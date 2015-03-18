@@ -128,11 +128,13 @@
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Conta\Cadastrar.cshtml" />
+    <Content Include="Views\Conta\Listar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ContaController.cs" />
+    <Compile Include="Controllers\ContaWSController.cs" />
     <Compile Include="DataAccess\ListaSupermercadoContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
