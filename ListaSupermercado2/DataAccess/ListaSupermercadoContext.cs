@@ -10,5 +10,6 @@ namespace ListaSupermercado2.DataAccess
     public class ListaSupermercadoContext : DbContext
     {
         public DbSet<Conta> Contas { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
     }
 }

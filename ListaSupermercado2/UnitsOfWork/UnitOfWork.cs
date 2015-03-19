@@ -12,6 +12,19 @@ namespace ListaSupermercado2.UnitsOfWork
     {
         private ListaSupermercadoContext _context = new ListaSupermercadoContext();
         private IGenericRepository<Conta> _contaRepository;
+        private IGenericRepository<Produto> _produtoRepository;
+
+        public IGenericRepository<Produto> ProdutoRepository
+        {
+            get
+            {
+                if (_produtoRepository == null)
+                {
+                    _contaRepository = new GenericRepository<Conta>(_context);
+                }
+                return _produtoRepository;
+            }
+        }
 
         public IGenericRepository<Conta> ContaRepository
         {

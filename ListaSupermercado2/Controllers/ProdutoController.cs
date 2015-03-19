@@ -8,15 +8,9 @@ using System.Web.Mvc;
 
 namespace ListaSupermercado2.Controllers
 {
-    public class ContaController : Controller
+    public class ProdutoController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork();
-
-        // GET: Conta
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet]
         public ActionResult Cadastrar()
@@ -25,16 +19,16 @@ namespace ListaSupermercado2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Conta conta)
+        public ActionResult Cadastrar(Produto produto)
         {
-            _unit.ContaRepository.Add(conta);
+            _unit.ProdutoRepository.Add(produto);
             _unit.Save();
             return View();
         }
 
         public ActionResult Listar()
         {
-            return View(_unit.ContaRepository.List());
+            return View(_unit.ProdutoRepository.List());
         }
 
         protected override void Dispose(bool disposing)
