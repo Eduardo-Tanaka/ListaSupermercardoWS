@@ -25,16 +25,28 @@ namespace ListaSupermercado2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Conta conta)
+        public ActionResult Cadastrar(Conta conta, string password2)
         {
             _unit.ContaRepository.Add(conta);
             _unit.Save();
-            return View();
+            return RedirectToAction("Listar", "Conta");
         }
 
         public ActionResult Listar()
         {
             return View(_unit.ContaRepository.List());
+        }
+
+        [HttpGet]
+        public ActionResult Logar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Logar(Conta conta)
+        {
+            return RedirectToAction("Index", "Conta");
         }
 
         protected override void Dispose(bool disposing)

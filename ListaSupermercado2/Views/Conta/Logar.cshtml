@@ -1,12 +1,12 @@
 ﻿@model ListaSupermercado2.Models.Conta
 
 @{
-    ViewBag.Title = "Cadastrar";
+    ViewBag.Title = "Logar";
 }
 
-<h2>Cadastrar</h2>
+<h2>Logar</h2>
 
-@using (@Html.BeginForm("Cadastrar", "Conta"))
+@using (@Html.BeginForm("Logar", "Conta"))
 {
     <div class="row">
         <div class="form-group col-md-6">
@@ -22,15 +22,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="form-group col-md-6">
-            <label for="Password2">Confirmar Senha</label>
-            <input type="password" name="Password2" id="Password2" class="form-control" placeholder="Confirmar Senha" />
-        </div>
-    </div>
-
     <div>
-        <input type="submit" value="Cadastrar" class="btn btn-success" />
-        @Html.ActionLink("Logar", "Logar", "Conta")
+        <input type="submit" value="Logar" class="btn btn-success" />
+        @Html.ActionLink("Cadastrar", "Cadastrar", "Conta")
     </div>
 }
