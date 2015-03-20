@@ -20,7 +20,7 @@ namespace ListaSupermercado2.UnitsOfWork
             {
                 if (_produtoRepository == null)
                 {
-                    _contaRepository = new GenericRepository<Conta>(_context);
+                    _produtoRepository = new GenericRepository<Produto>(_context);
                 }
                 return _produtoRepository;
             }
