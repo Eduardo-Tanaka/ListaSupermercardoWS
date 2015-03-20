@@ -17,7 +17,7 @@ namespace ListaSupermercado2
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ListaSupermercadoContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<ListaSupermercadoContext>());
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
