@@ -11,5 +11,6 @@ namespace ListaSupermercado2.DataAccess
     {
         public DbSet<Conta> Contas { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Lista> Listas { get; set; }
     }
 }

@@ -13,6 +13,19 @@ namespace ListaSupermercado2.UnitsOfWork
         private ListaSupermercadoContext _context = new ListaSupermercadoContext();
         private IGenericRepository<Conta> _contaRepository;
         private IGenericRepository<Produto> _produtoRepository;
+        private IGenericRepository<Lista> _listaRepository;
+
+        public IGenericRepository<Lista> ListaRepository
+        {
+            get
+            {
+                if (_listaRepository == null)
+                {
+                    _listaRepository = new GenericRepository<Lista>(_context);
+                }
+                return _listaRepository;
+            }
+        }
 
         public IGenericRepository<Produto> ProdutoRepository
         {
