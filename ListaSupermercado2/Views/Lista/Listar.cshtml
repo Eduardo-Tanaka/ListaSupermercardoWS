@@ -12,6 +12,7 @@
         <tr>Id</tr>
         <tr>Produto</tr>
         <tr>Quantidade</tr>
+        <tr>Excluir</tr>
     </thead>
     <tbody>
         @foreach (var p in Model)
@@ -20,6 +21,7 @@
                 <td>@p.ListaId</td>
                 <td>@p.Nome</td>
                 <td>@p.Quantidade</td>
+                <td>@Html.ActionLink("Deletar", "Deletar", "Lista", new { id = @p.ListaId }, new { @class = "btn btn-warning" })</td>
             </tr>
         }
     </tbody>

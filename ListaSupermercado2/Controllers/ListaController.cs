@@ -31,8 +31,10 @@ namespace ListaSupermercado2.Controllers
             return View(_unit.ListaRepository.List());
         }
 
-        public ActionResult Deletar()
+        public ActionResult Deletar(int id)
         {
+            _unit.ListaRepository.Delete(id);
+            _unit.Save();
             return View();
         }
     }
