@@ -1,7 +1,26 @@
-﻿
+﻿@model List<ListaSupermercado2.Models.Lista>
+
+
 @{
     ViewBag.Title = "Listar";
 }
 
 <h2>Listar</h2>
 
+<table>
+    <thead>
+        <tr>Id</tr>
+        <tr>Produto</tr>
+        <tr>Quantidade</tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ListaId</td>
+                <td>@p.Nome</td>
+                <td>@p.Quantidade</td>
+            </tr>
+        }
+    </tbody>
+</table>
