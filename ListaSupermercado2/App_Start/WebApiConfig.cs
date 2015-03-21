@@ -21,6 +21,8 @@ namespace ListaSupermercado2
             );
 
             config.EnableCors();
+
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
 }
