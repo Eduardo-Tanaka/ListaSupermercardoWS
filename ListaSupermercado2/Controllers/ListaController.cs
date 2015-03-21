@@ -1,4 +1,5 @@
 ﻿using ListaSupermercado2.Models;
+using ListaSupermercado2.UnitsOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace ListaSupermercado2.Controllers
 {
     public class ListaController : Controller
     {
+        private UnitOfWork _unit = new UnitOfWork();
+
         [HttpGet]
         public ActionResult Cadastrar()
         {
@@ -18,7 +21,14 @@ namespace ListaSupermercado2.Controllers
         [HttpPost]
         public ActionResult Cadastrar(Lista lista)
         {
+            _unit.ListaRepository.Add(lista);
+            _unit.Save();
             return View();
+        }
+
+        public ActionResult Listar()
+        {
+            return View(_unit.ListaRepository.List());
         }
     }
 }

@@ -1,7 +1,28 @@
-﻿
+﻿@model ListaSupermercado2.Models.Lista
+
 @{
     ViewBag.Title = "Cadastrar";
 }
 
 <h2>Cadastrar</h2>
 
+@using (@Html.BeginForm("Cadastrar", "Lista"))
+{
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(p => p.Nome)
+            @Html.TextBoxFor(p => p.Nome, new { @class = "form-control", placeholder = "Produto" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(p => p.Quantidade)
+            @Html.TextBoxFor(p => p.Quantidade, new { @class = "form-control", placeholder = "Quantidade" })
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Cadastrar" class="btn btn-success" />
+    </div>
+}

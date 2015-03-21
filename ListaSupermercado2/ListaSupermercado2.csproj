@@ -136,6 +136,7 @@
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\ContaWSController.cs" />
     <Compile Include="Controllers\ListaController.cs" />
+    <Compile Include="Controllers\ListaWSController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\ProdutoWSController.cs" />
     <Compile Include="DataAccess\ListaSupermercadoContext.cs" />
@@ -160,6 +161,7 @@
     <Content Include="Views\Produto\Listar.cshtml" />
     <Content Include="Views\Conta\Logar.cshtml" />
     <Content Include="Views\Lista\Cadastrar.cshtml" />
+    <Content Include="Views\Lista\Listar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

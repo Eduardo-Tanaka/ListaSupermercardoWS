@@ -28,10 +28,17 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produtos <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produtos BD<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("Cadastrar", "Cadastrar", "Produto")</li>
                             <li>@Html.ActionLink("Listar", "Listar", "Produto")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Minha Lista <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Cadastrar", "Cadastrar", "Lista")</li>
+                            <li>@Html.ActionLink("Listar", "Listar", "Lista")</li>
                         </ul>
                     </li>
                 </ul>
