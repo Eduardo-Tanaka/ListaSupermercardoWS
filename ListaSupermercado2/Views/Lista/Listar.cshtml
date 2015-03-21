@@ -21,7 +21,7 @@
                 <td>@p.ListaId</td>
                 <td>@p.Nome</td>
                 <td>@p.Quantidade</td>
-                <td>@Html.ActionLink("Deletar", "Deletar", "Lista", new { id = @p.ListaId }, new { @class = "btn btn-warning" })</td>
+                <td>@Html.ActionLink("Deletar", "Deletar", "Lista", new { id = @p.ListaId })</td>
             </tr>
         }
     </tbody>

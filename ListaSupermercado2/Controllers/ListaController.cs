@@ -31,6 +31,7 @@ namespace ListaSupermercado2.Controllers
             return View(_unit.ListaRepository.List());
         }
 
+        [HttpGet]
         public ActionResult Deletar(int id)
         {
             _unit.ListaRepository.Delete(id);

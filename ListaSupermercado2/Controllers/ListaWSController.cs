@@ -58,7 +58,7 @@ namespace ListaSupermercado2.Controllers
 
         public void Delete(int id)
         {
-            _unit.ContaRepository.Delete(id);
+            _unit.ListaRepository.Delete(id);
             _unit.Save();
         }
 
