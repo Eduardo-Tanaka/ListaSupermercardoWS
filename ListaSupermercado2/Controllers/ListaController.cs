@@ -31,12 +31,17 @@ namespace ListaSupermercado2.Controllers
             return View(_unit.ListaRepository.List());
         }
 
-        [HttpGet]
         public ActionResult Deletar(int id)
         {
             _unit.ListaRepository.Delete(id);
             _unit.Save();
-            return View();
+            return RedirectToAction("Listar");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _unit.Dispose();
+            base.Dispose(disposing);
         }
     }
 }
