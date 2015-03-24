@@ -60,7 +60,7 @@ namespace ListaSupermercado2.Controllers
         public ActionResult Editar(int id)
         {
             var conta = _unit.ContaRepository.SearchById(id);
-            return RedirectToAction("Listar", conta);
+            return View("Editar", conta);
         }
 
         [HttpPost]

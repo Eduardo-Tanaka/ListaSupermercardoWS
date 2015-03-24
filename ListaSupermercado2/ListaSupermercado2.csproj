@@ -162,6 +162,8 @@
     <Content Include="Views\Conta\Logar.cshtml" />
     <Content Include="Views\Lista\Cadastrar.cshtml" />
     <Content Include="Views\Lista\Listar.cshtml" />
+    <Content Include="Views\Produto\Editar.cshtml" />
+    <Content Include="Views\Conta\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

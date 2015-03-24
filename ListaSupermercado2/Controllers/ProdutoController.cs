@@ -42,7 +42,7 @@ namespace ListaSupermercado2.Controllers
         public ActionResult Editar(int id)
         {
             var produto = _unit.ProdutoRepository.SearchById(id);
-            return RedirectToAction("Listar", produto);
+            return View("Editar", produto);
         }
 
         [HttpPost]

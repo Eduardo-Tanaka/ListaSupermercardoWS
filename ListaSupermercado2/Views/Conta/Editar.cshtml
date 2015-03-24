@@ -1,0 +1,36 @@
+﻿@model ListaSupermercado2.Models.Conta
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Cadastrar</h2>
+
+@using (@Html.BeginForm("Editar", "Conta"))
+{
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(c => c.Usuario)
+            @Html.TextBoxFor(c => c.Usuario, new { @class = "form-control", placeholder = "Usuario" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(c => c.Senha)
+            @Html.TextBoxFor(c => c.Senha, new { @class = "form-control", placeholder = "Senha" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="Password2">Confirmar Senha</label>
+            <input type="password" name="Password2" id="Password2" class="form-control" placeholder="Confirmar Senha" />
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Cadastrar" class="btn btn-success" />
+        @Html.ActionLink("Editar", "Editar", "Conta")
+    </div>
+}
