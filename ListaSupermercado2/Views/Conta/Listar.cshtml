@@ -10,6 +10,8 @@
         <tr>Id</tr>
         <tr>Usuario</tr>
         <tr>Senha</tr>
+        <tr>Excluir</tr>
+        <tr>Editar</tr>
     </thead>
     <tbody>
         @foreach (var c in Model)
@@ -18,6 +20,8 @@
                 <td>@c.ContaId</td>
                 <td>@c.Usuario</td>
                 <td>@c.Senha</td>
+                <td>@Html.ActionLink("Deletar", "Deletar", new { id = @c.ContaId })</td>
+                <td>@Html.ActionLink("Editar", "Editar", new { id = @c.ContaId }, new { @class = "btn btn-info btn-sm" })</td>
             </tr>    
         }
     </tbody>

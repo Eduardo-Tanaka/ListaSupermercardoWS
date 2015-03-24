@@ -49,6 +49,29 @@ namespace ListaSupermercado2.Controllers
             return RedirectToAction("Index", "Conta");
         }
 
+        public ActionResult Deletar(int id)
+        {
+            _unit.ListaRepository.Delete(id);
+            _unit.Save();
+            return RedirectToAction("Listar");
+        }
+
+        [HttpGet]
+        public ActionResult Editar(int id)
+        {
+            var conta = _unit.ContaRepository.SearchById(id);
+
+            return View(conta);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Conta conta)
+        {
+            _unit.ContaRepository.Update(conta);
+            _unit.Save();
+            return RedirectToAction("Listar");
+        }
+
         protected override void Dispose(bool disposing)
         {
             _unit.Dispose();
