@@ -164,6 +164,7 @@
     <Content Include="Views\Lista\Listar.cshtml" />
     <Content Include="Views\Produto\Editar.cshtml" />
     <Content Include="Views\Conta\Editar.cshtml" />
+    <Content Include="Views\Lista\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

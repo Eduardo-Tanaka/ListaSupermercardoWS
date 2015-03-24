@@ -1,4 +1,4 @@
-﻿@model ListaSupermercado2.Models.Produto
+﻿@model ListaSupermercado2.Models.Lista
 
 @{
     ViewBag.Title = "Editar";
@@ -6,9 +6,9 @@
 
 <h2>Cadastrar</h2>
 
-@using (@Html.BeginForm("Editar", "Produto"))
+@using (@Html.BeginForm("Editar", "Lista"))
 {
-    @Html.HiddenFor(p => p.ProdutoId)
+    
     <div class="row">
         <div class="form-group col-md-6">
             @Html.LabelFor(p => p.Nome)
@@ -16,6 +16,12 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(p => p.Quantidade)
+            @Html.TextBoxFor(p => p.Quantidade, new { @class = "form-control", placeholder = "Quantidade" })
+        </div>
+    </div>
 
     <div>
         <input type="submit" value="Editar" class="btn btn-success" />

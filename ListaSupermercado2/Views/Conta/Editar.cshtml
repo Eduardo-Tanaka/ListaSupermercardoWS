@@ -8,6 +8,7 @@
 
 @using (@Html.BeginForm("Editar", "Conta"))
 {
+    @Html.HiddenFor(c => c.ContaId)
     <div class="row">
         <div class="form-group col-md-6">
             @Html.LabelFor(c => c.Usuario)
@@ -30,7 +31,6 @@
     </div>
 
     <div>
-        <input type="submit" value="Cadastrar" class="btn btn-success" />
-        @Html.ActionLink("Editar", "Editar", "Conta")
+        <input type="submit" value="Editar" class="btn btn-success" />
     </div>
 }
