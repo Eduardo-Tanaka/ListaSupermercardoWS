@@ -51,7 +51,7 @@ namespace ListaSupermercado2.Controllers
 
         public ActionResult Deletar(int id)
         {
-            _unit.ListaRepository.Delete(id);
+            _unit.ContaRepository.Delete(id);
             _unit.Save();
             return RedirectToAction("Listar");
         }
@@ -60,8 +60,7 @@ namespace ListaSupermercado2.Controllers
         public ActionResult Editar(int id)
         {
             var conta = _unit.ContaRepository.SearchById(id);
-
-            return View(conta);
+            return RedirectToAction("Listar", conta);
         }
 
         [HttpPost]

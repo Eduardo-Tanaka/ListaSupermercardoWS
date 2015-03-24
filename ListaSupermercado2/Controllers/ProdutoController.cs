@@ -33,7 +33,22 @@ namespace ListaSupermercado2.Controllers
 
         public ActionResult Deletar(int id)
         {
-            _unit.ListaRepository.Delete(id);
+            _unit.ProdutoRepository.Delete(id);
+            _unit.Save();
+            return RedirectToAction("Listar");
+        }
+
+        [HttpGet]
+        public ActionResult Editar(int id)
+        {
+            var produto = _unit.ProdutoRepository.SearchById(id);
+            return RedirectToAction("Listar", produto);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Produto produto)
+        {
+            _unit.ProdutoRepository.Update(produto);
             _unit.Save();
             return RedirectToAction("Listar");
         }
