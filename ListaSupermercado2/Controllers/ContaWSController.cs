@@ -27,7 +27,6 @@ namespace ListaSupermercado2.Controllers
 
         public IHttpActionResult Post(Conta conta)
         {
-
             if (ModelState.IsValid)
             {
                 _unit.ContaRepository.Add(conta);

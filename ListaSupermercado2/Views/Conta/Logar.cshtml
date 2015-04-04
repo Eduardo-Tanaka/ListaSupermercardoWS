@@ -8,6 +8,8 @@
 
 @using (@Html.BeginForm("Logar", "Conta"))
 {
+    @MensagemHelper.Mensagem(TempData["msg"] as string, "danger")
+    @Html.ValidationSummary()
     <div class="row">
         <div class="form-group col-md-6">
             @Html.LabelFor(c => c.Usuario)
@@ -24,6 +26,6 @@
 
     <div>
         <input type="submit" value="Logar" class="btn btn-success" />
-        @Html.ActionLink("Cadastrar", "Cadastrar", "Conta")
+        @Html.ActionLink("Cadastrar", "Cadastrar", "Conta", new { @class= "btn btn-info" })
     </div>
 }

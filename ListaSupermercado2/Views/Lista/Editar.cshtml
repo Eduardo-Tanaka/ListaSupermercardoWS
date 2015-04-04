@@ -8,7 +8,9 @@
 
 @using (@Html.BeginForm("Editar", "Lista"))
 {
-    
+    <input type="hidden" value="@ViewBag.ContaId" name="ContaId" />
+
+    @Html.HiddenFor(p => p.ListaId)
     <div class="row">
         <div class="form-group col-md-6">
             @Html.LabelFor(p => p.Nome)

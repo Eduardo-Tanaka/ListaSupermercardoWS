@@ -10,6 +10,7 @@ namespace ListaSupermercado2.Models
         public int ListaId { get; set; }
         public string Nome { get; set; }
         public int Quantidade { get; set; }
-
+        public int ContaId { get; set; }
+        public Conta conta { get; set; }
     }
 }

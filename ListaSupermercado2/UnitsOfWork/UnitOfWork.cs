@@ -11,7 +11,7 @@ namespace ListaSupermercado2.UnitsOfWork
     public class UnitOfWork : IDisposable
     {
         private ListaSupermercadoContext _context = new ListaSupermercadoContext();
-        private IGenericRepository<Conta> _contaRepository;
+        private IContaRepository _contaRepository;
         private IGenericRepository<Produto> _produtoRepository;
         private IGenericRepository<Lista> _listaRepository;
 
@@ -39,13 +39,13 @@ namespace ListaSupermercado2.UnitsOfWork
             }
         }
 
-        public IGenericRepository<Conta> ContaRepository
+        public IContaRepository ContaRepository
         {
             get
             {
                 if (_contaRepository == null)
                 {
-                    _contaRepository = new GenericRepository<Conta>(_context);
+                    _contaRepository = new ContaRepository(_context);
                 }
                 return _contaRepository;
             }

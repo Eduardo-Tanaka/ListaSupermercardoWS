@@ -8,7 +8,8 @@
 
 @using (@Html.BeginForm("Cadastrar", "Lista"))
 {
-    @Html.HiddenFor(p => p.ListaId)
+    <input type="hidden"  value="@ViewBag.ContaId" name="ContaId"/>
+    
     <div class="row">
         <div class="form-group col-md-6">
             @Html.LabelFor(p => p.Nome)
@@ -24,6 +25,6 @@
     </div>
 
     <div>
-        <input type="submit" value="Editar" class="btn btn-success" />
+        <input type="submit" value="Cadastrar" class="btn btn-success" />
     </div>
 }

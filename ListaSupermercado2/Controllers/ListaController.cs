@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ListaSupermercado2.Controllers
 {
+    [Authorize]
     public class ListaController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork();
@@ -15,12 +16,15 @@ namespace ListaSupermercado2.Controllers
         [HttpGet]
         public ActionResult Cadastrar()
         {
+            Conta conta = _unit.ContaRepository.SearchByName(User.Identity.Name);
+            ViewBag.ContaId = conta.ContaId; 
             return View();
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Lista lista)
+        public ActionResult Cadastrar(Lista lista, int ContaId)
         {
+            lista.ContaId = ContaId;
             _unit.ListaRepository.Add(lista);
             _unit.Save();
             return View();
@@ -28,7 +32,8 @@ namespace ListaSupermercado2.Controllers
 
         public ActionResult Listar()
         {
-            return View(_unit.ListaRepository.List());
+            Conta conta = _unit.ContaRepository.SearchByName(User.Identity.Name);
+            return View(_unit.ListaRepository.SearchFor(p => p.ContaId == conta.ContaId));
         }
 
         public ActionResult Deletar(int id)
@@ -41,6 +46,8 @@ namespace ListaSupermercado2.Controllers
         [HttpGet]
         public ActionResult Editar(int id)
         {
+            Conta conta = _unit.ContaRepository.SearchByName(User.Identity.Name);
+            ViewBag.ContaId = conta.ContaId;
             var lista = _unit.ListaRepository.SearchById(id);
             return View("Editar", lista);
         }
