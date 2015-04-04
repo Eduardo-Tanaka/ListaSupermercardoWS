@@ -27,6 +27,10 @@ namespace ListaSupermercado2.Controllers
 
         public IHttpActionResult Post(Conta conta)
         {
+            if (_unit.ContaRepository.SearchFor(c => c.Usuario == conta.Usuario).Count != 0)
+            {
+                return BadRequest("Usuário já existe");
+            }
             if (ModelState.IsValid)
             {
                 _unit.ContaRepository.Add(conta);
