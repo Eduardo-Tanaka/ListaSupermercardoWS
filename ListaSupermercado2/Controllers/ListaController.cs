@@ -27,6 +27,7 @@ namespace ListaSupermercado2.Controllers
             lista.ContaId = ContaId;
             _unit.ListaRepository.Add(lista);
             _unit.Save();
+            TempData["msg"] = lista.Nome + " Adicionado!";
             return View();
         }
 
