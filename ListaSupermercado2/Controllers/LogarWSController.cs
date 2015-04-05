@@ -20,7 +20,9 @@ namespace ListaSupermercado2.Controllers
             var user = _unit.ContaRepository.Logar(conta.Usuario, conta.Senha);
             if (user == null)
             {
-                return null;
+                Conta c = new Conta();
+                c.Usuario = "Invalido";
+                return c;
             }
             else
             {
