@@ -137,6 +137,7 @@
     <Compile Include="Controllers\ContaWSController.cs" />
     <Compile Include="Controllers\ListaController.cs" />
     <Compile Include="Controllers\ListaWSController.cs" />
+    <Compile Include="Controllers\LogarWSController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\ProdutoWSController.cs" />
     <Compile Include="DataAccess\ListaSupermercadoContext.cs" />
