@@ -15,9 +15,11 @@ namespace ListaSupermercado2.Controllers
     {
         private UnitOfWork _unit = new UnitOfWork();
 
-        public IEnumerable<Lista> Get()
+        public IEnumerable<Lista> Get(string nome)
         {
-            return _unit.ListaRepository.List();
+            Conta conta = _unit.ContaRepository.SearchByName(nome);
+            return _unit.ListaRepository.SearchFor(p => p.ContaId == conta.ContaId);
+            //return _unit.ListaRepository.List();
         }
 
         public Lista Get(int id)
@@ -27,7 +29,6 @@ namespace ListaSupermercado2.Controllers
 
         public IHttpActionResult Post(Lista lista)
         {
-
             if (ModelState.IsValid)
             {
                 _unit.ListaRepository.Add(lista);
