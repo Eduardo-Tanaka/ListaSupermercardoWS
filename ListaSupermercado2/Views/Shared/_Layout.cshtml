@@ -17,7 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("ListaSupermercado", "Cadastrar", "Conta", new { area = "" }, new { @class = "navbar-brand" })
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("ListaSupermercado", "Listar", "Lista", new { area = "" }, new { @class = "navbar-brand" })
+                }
+                else
+                {
+                    @Html.ActionLink("ListaSupermercado", "Cadastrar", "Conta", new { area = "" }, new { @class = "navbar-brand" })
+                }
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -34,13 +41,15 @@
                             <li>@Html.ActionLink("Listar", "Listar", "Produto")</li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Minha Lista <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Cadastrar", "Cadastrar", "Lista")</li>
-                            <li>@Html.ActionLink("Listar", "Listar", "Lista")</li>
-                        </ul>
-                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            @Html.ActionLink("Adicionar", "Cadastrar", "Lista")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Listar", "Listar", "Lista")
+                        </li>
+                    }
                 </ul>
 
                 <div class="navbar-right">

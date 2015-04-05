@@ -24,6 +24,18 @@ namespace ListaSupermercado2.Controllers
         [HttpPost]
         public ActionResult Cadastrar(Lista lista, int ContaId)
         {
+            if (lista.Nome == null)
+            {
+                ModelState.AddModelError("Nome", "Adicione um produto válido");
+                ViewBag.ContaId = ContaId;
+                return View();
+            }
+            if (lista.Quantidade <= 0)
+            {
+                ModelState.AddModelError("Quantidade", "Adicione uma quantidade válida");
+                ViewBag.ContaId = ContaId;
+                return View();
+            }
             lista.ContaId = ContaId;
             _unit.ListaRepository.Add(lista);
             _unit.Save();
@@ -56,6 +68,20 @@ namespace ListaSupermercado2.Controllers
         [HttpPost]
         public ActionResult Editar(Lista lista)
         {
+            if (lista.Nome == null)
+            {
+                Conta conta = _unit.ContaRepository.SearchByName(User.Identity.Name);
+                ModelState.AddModelError("Nome", "Adicione um produto válido");
+                ViewBag.ContaId = lista.ContaId;
+                return View("Editar", lista);
+            }
+            if (lista.Quantidade <= 0)
+            {
+                Conta conta = _unit.ContaRepository.SearchByName(User.Identity.Name);
+                ModelState.AddModelError("Quantidade", "Adicione uma quantidade válida");
+                ViewBag.ContaId = lista.ContaId;
+                return View("Editar", lista);
+            }
             _unit.ListaRepository.Update(lista);
             _unit.Save();
             return RedirectToAction("Listar");

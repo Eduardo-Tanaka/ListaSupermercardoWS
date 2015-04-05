@@ -64,6 +64,11 @@ namespace ListaSupermercado2.Controllers
         [HttpPost]
         public ActionResult Logar(Conta conta, string returnUrl)
         {
+            if (conta.Usuario == null || conta.Senha == null)
+            {
+                TempData["msg"] = "Usuário ou senha Inválidos";
+                return View();
+            }
             var user = _unit.ContaRepository.Logar(conta.Usuario, conta.Senha);
             if (user != null)
             {

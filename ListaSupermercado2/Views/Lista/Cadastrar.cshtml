@@ -8,8 +8,9 @@
 
 @using (@Html.BeginForm("Cadastrar", "Lista"))
 {
-    <input type="hidden"  value="@ViewBag.ContaId" name="ContaId"/>
     @MensagemHelper.Mensagem(TempData["msg"] as string, "success")
+    @Html.ValidationSummary()
+    <input type="hidden"  value="@ViewBag.ContaId" name="ContaId"/>
     <div class="row">
         <div class="form-group col-md-6">
             @Html.LabelFor(p => p.Nome)
