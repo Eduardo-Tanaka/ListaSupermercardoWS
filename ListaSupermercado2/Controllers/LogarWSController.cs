@@ -29,5 +29,11 @@ namespace ListaSupermercado2.Controllers
                 return user;
             }
         }
+
+        // lista de produtos do usuario com determinado id
+        public IEnumerable<Lista> Get(int id)
+        {
+            return _unit.ListaRepository.SearchFor(p => p.ContaId == id);
+        }
     }
 }

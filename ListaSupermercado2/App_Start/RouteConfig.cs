@@ -15,7 +15,7 @@ namespace ListaSupermercado2
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{controller}/{action}/{id}/{nome}",
                 defaults: new { controller = "Conta", action = "Logar", id = UrlParameter.Optional }
             );
         }
