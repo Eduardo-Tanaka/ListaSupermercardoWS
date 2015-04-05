@@ -15,14 +15,17 @@ namespace ListaSupermercado2.Controllers
     {
         private UnitOfWork _unit = new UnitOfWork();
 
-        public IHttpActionResult Post(Conta conta)
+        public Conta Post(Conta conta)
         {
             var user = _unit.ContaRepository.Logar(conta.Usuario, conta.Senha);
             if (user == null)
             {
-                return BadRequest("Invalido");
+                return null;
             }
-            return null;
+            else
+            {
+                return user;
+            }
         }
     }
 }
